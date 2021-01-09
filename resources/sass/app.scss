@@ -1,0 +1,29 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import '~jquery-ui/themes/base/all.css';
+
+@import '~jquery-timepicker/jquery.timepicker.css';
+
+
+.js-cookie-consent{
+    position: -webkit-sticky; /* Safari */
+    position: inherit;
+    position:fixed;
+    top:auto;
+    bottom:0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: #a09cff;
+    border-color: black;
+    border: solid 1px;
+    color: white;
+  }
