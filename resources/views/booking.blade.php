@@ -25,15 +25,16 @@
                 If you have already made a booking for the space, consider it to still be <strong>active</strong> unless you have been notified by an administrator.</P>
 
                 <div class="btn-group btn-block">
-                @foreach($allrooms as $a)
-                @if($a == $selectedroom)
-                @else
-                <a type="button" class="btn btn-info" href="{{ route('booking', $a) }}">{{ $a->roomname }}</a>
-                @endif
-                @endforeach
-                @can('manage-users')
-                <a type="button" class="btn btn-info" href="{{ route('admin.calendar.index')}}">All</a>
-                @endcan
+                    @foreach($allrooms as $a)
+                    @if($a == $selectedroom)
+                    <a type="button" class="btn btn-warning" href="{{ route('booking', $a) }}">{{ $a->roomname }}</a>
+                    @else
+                    <a type="button" class="btn btn-info" href="{{ route('booking', $a) }}">{{ $a->roomname }}</a>
+                    @endif
+                    @endforeach
+                    @can('manage-users')
+                    <a type="button" class="btn btn-info" href="{{ route('admin.calendar.index')}}">All</a>
+                    @endcan
                 </div>
                 <br>
                 <br>
@@ -68,7 +69,7 @@
 
 
 
-                    @endif
+
 
         </div>
 
@@ -189,7 +190,7 @@
             <hr>
             <h3>Select addition equipment you wish to hire</h3>
             <div class="form-group row">
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Guitar Head') }}</label>
+                <label for="guitarheadamount" class="col-md-2 col-form-label text-md-right">{{ __('Guitar Head') }}</label>
 
                 <div class="col-md-2">
                     <input id="guitarheadamount" type="text" step="1" class="addpadding form-control @error('guitarheadamount') is-invalid @enderror" readonly="true"
@@ -201,7 +202,7 @@
                     </span>
                     @enderror
                 </div>
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Guitar Cab') }}</label>
+                <label for="guitarcabamount" class="col-md-2 col-form-label text-md-right">{{ __('Guitar Cab') }}</label>
 
                 <div class="col-md-2">
                     <input id="guitarcabamount" type="text" step="1" class="addpadding form-control @error('guitarcabamount') is-invalid @enderror" readonly="true"
@@ -213,7 +214,7 @@
                     </span>
                     @enderror
                 </div>
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Guitar Combos') }}</label>
+                <label for="guitarcomboamount" class="col-md-2 col-form-label text-md-right">{{ __('Guitar Combos') }}</label>
 
                 <div class="col-md-2">
                     <input id="guitarcomboamount" type="text" step="1" class="addpadding form-control @error('guitarcomboamount') is-invalid @enderror" readonly="true"
@@ -228,7 +229,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Bass Head') }}</label>
+                <label for="bassheadamount" class="col-md-2 col-form-label text-md-right">{{ __('Bass Head') }}</label>
 
                 <div class="col-md-2">
                     <input id="bassheadamount" type="text" step="1" class="addpadding form-control @error('bassheadamount') is-invalid @enderror" readonly="true"
@@ -240,7 +241,7 @@
                     </span>
                     @enderror
                 </div>
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Bass Cab') }}</label>
+                <label for="basscabamount" class="col-md-2 col-form-label text-md-right">{{ __('Bass Cab') }}</label>
 
                 <div class="col-md-2">
                     <input id="basscabamount" type="text" step="1" class="addpadding form-control @error('basscabamount') is-invalid @enderror" readonly="true"
@@ -252,7 +253,7 @@
                     </span>
                     @enderror
                 </div>
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Bass Combos') }}</label>
+                <label for="basscomboamount" class="col-md-2 col-form-label text-md-right">{{ __('Bass Combos') }}</label>
 
                 <div class="col-md-2">
                     <input id="basscomboamount" type="text" step="1" class="addpadding form-control @error('basscomboamount') is-invalid @enderror" readonly="true"
@@ -267,7 +268,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Drum Kit') }}</label>
+                <label for="drumkitamount" class="col-md-2 col-form-label text-md-right">{{ __('Drum Kit') }}</label>
 
                 <div class="col-md-2">
                     <input id="drumkitamount" type="text" step="1" class="addpadding form-control @error('drumkitamount') is-invalid @enderror" readonly="true"
@@ -281,7 +282,7 @@
 
 
                 </div>
-                <label class="col-md-2 col-form-label text-md-right">{{ __('Cymbals') }}</label>
+                <label for="cymbalsamount" class="col-md-2 col-form-label text-md-right">{{ __('Cymbals') }}</label>
 
                 <div class="col-md-2">
                     <input id="cymbalsamount" type="text" step="1" class="addpadding form-control @error('cymbalsamount') is-invalid @enderror" readonly="true"
@@ -310,6 +311,7 @@
                 <br>
                 <datepicker-component></datepicker-component>
             </div>
+            @endif
             <hr>
 
 
